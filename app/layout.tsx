@@ -20,7 +20,7 @@
 
 import type { Metadata } from "next";
 import "./globals.css";
-import { Web3Provider } from "@/components/Web3Provider";
+import Web3Provider from "@/components/Web3Provider";
 
 export const metadata: Metadata = {
   title: "CAM — Celo Agent Marketplace",
