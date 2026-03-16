@@ -141,7 +141,7 @@ export default function AgentCard({ agent, rank, style }: Props) {
             </span>
           </div>
 
-          <div
+          {/* <div
             style={{
               fontSize: "0.75rem",
               color: "var(--text-dim)",
@@ -155,7 +155,41 @@ export default function AgentCard({ agent, rank, style }: Props) {
             <span>Agent #{agent.agentId}</span>
             <span style={{ opacity: 0.3 }}>•</span>
             <span>{timeAgo(agent.registrationTimestamp)}</span>
+          </div> */}
+          <div
+            style={{
+              fontSize: "0.75rem",
+              color: "var(--text-dim)",
+              marginBottom: agent.description ? "0.65rem" : "1rem",
+              display: "flex",
+              flexWrap: "wrap",
+              gap: "0.5rem",
+              alignItems: "center"
+            }}
+          >
+            <span>Agent #{agent.agentId}</span>
+            <span style={{ opacity: 0.3 }}>•</span>
+            <span>{timeAgo(agent.registrationTimestamp)}</span>
           </div>
+
+          {/* Description */}
+          {agent.description && (
+            <div
+              style={{
+                fontSize: "0.72rem",
+                color: "var(--text-dim)",
+                lineHeight: 1.55,
+                marginBottom: "1rem",
+                display: "-webkit-box",
+                WebkitLineClamp: 2,
+                WebkitBoxOrient: "vertical" as any,
+                overflow: "hidden",
+                opacity: 0.8,
+              }}
+            >
+              {agent.description}
+            </div>
+          )}
 
           {agent.skills && agent.skills.length > 0 && (
             <div
